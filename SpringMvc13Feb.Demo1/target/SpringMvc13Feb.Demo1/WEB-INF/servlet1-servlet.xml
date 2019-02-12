@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	<!-- If the request is coming for index.do : it will take it to IndexController -->
+	<bean name="/index.do" class="com.java.controller.IndexController" autowire="byType"></bean>
+	<!-- In the bean name u specify the url, class: controller -->
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="suffix" value=".jsp"></property>
+		<property name="prefix" value="/view/"></property>
+	</bean>
+	<bean name="service" class="com.java.controller.IndexService"/>
+</beans>        
