@@ -11,7 +11,7 @@
   </servlet>
   <servlet-mapping>
   <servlet-name>Servlet1</servlet-name>
-  <url-pattern>*.htm</url-pattern>
+  <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>
 

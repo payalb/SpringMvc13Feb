@@ -22,7 +22,7 @@ public class EmployeeRepository {
 	}
 	
 	public void addEmployee(Employee e) {
-		db.put(e.getId(), e);
+		db.put(e.id, e);
 	}
 	
 	public void removeEmployee(int id) {
@@ -30,6 +30,6 @@ public class EmployeeRepository {
 	}
 	
 	public void updateEmployee(Employee e) {
-		db.put(e.getId(), e);
+		db.put(e.id, e);
 	}
 }
