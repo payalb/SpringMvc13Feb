@@ -1,2 +1,0 @@
-0:0:0:0:0:0:0:1 - - [14/Feb/2019:23:14:35 +0530] "GET /SpringMvc13Feb.Demo3/home.jsp HTTP/1.1" 200 632 http-bio-8080-exec-1 483
-0:0:0:0:0:0:0:1 - - [14/Feb/2019:23:14:45 +0530] "POST /SpringMvc13Feb.Demo3/addEmployee.do HTTP/1.1" 500 12440 http-bio-8080-exec-2 857

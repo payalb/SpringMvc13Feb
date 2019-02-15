@@ -26,6 +26,12 @@ import com.java.util.MyDate1Editor;
 @Controller
 public class EmployeeController {
 	
+	@RequestMapping("/home.do")
+	public ModelAndView getHome(ModelAndView mv){
+		mv.setViewName("home2");
+		mv.addObject("employee", new Employee());
+		return mv;
+	}
 	@Autowired EmployeeRepository rep;
 	
 	@RequestMapping(path="/employees.do", method=RequestMethod.GET)
@@ -62,7 +68,7 @@ public class EmployeeController {
 	}*/
 	
 	@PostMapping("/addEmployee.do")
-	public String addEmployee(@Valid @ModelAttribute Employee employee, BindingResult result,Model model) {
+	public String addEmployee(@Valid @ModelAttribute("employee") Employee employee, BindingResult result,Model model) {
 		if(result.hasErrors()) {
 			model.addAttribute("errorMessage", 
 					result.getAllErrors().

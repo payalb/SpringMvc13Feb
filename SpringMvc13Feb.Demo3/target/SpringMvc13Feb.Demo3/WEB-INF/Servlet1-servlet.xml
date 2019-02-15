@@ -28,4 +28,8 @@
 	<property name="x" value="24"></property> setX
 </bean> -->
 <mvc:annotation-driven/>
+<bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource" id="messageSource">
+	<property name="basename" value="message"></property>
+</bean>
+
 </beans>

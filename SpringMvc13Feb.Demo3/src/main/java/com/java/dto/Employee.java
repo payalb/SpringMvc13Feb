@@ -17,14 +17,14 @@ public class Employee {
 
 	public int id;
 	@NotNull
-	@Size(min=3, max=30, message="Name should be between {min} and {max} in length.")
+	@Size(min=3, max=30, message="{Size.employee.name}")
 	String name;
 	@NotEmpty
-	@ProjectName(message="Project Name is not valid. ",isActive=false)
+	@ProjectName(isActive=false)
 	@Size(min=3, max=30)
 	String projectName;
 	@Min(100000)
 	float salary;
 	@Future
-	LocalDate doj;//yyyy-mm-dd
+	LocalDate doj= LocalDate.now();//yyyy-mm-dd
 }
