@@ -26,6 +26,7 @@
     <module>SpringMvc13Feb.Demo4</module>
     <module>SpringMvc13Feb.Demo5</module>
     <module>SpringMvc13Feb.Demo6</module>
+    <module>SpringMvc13Feb.Demo7</module>
   </modules>
 	<build>
 		<plugins>

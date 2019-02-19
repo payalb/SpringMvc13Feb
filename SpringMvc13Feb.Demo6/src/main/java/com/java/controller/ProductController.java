@@ -11,16 +11,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.dao.Product;
 import com.java.exception.DatabaseException;
 import com.java.repository.ProductRepository;
+import com.java.util.Dbutil;
 
 @Controller
 @RequestMapping("/products")
 public class ProductController {
 	@Autowired ProductRepository rep;
+	@Autowired Dbutil util;
 /*/products/3*/
 	@GetMapping("/{productId}")
 	public String getProductById(@PathVariable("productId") int id, Model model) throws DatabaseException {
@@ -54,5 +57,11 @@ public class ProductController {
 	public String exceptionHandler(Model model, Exception ex) {
 		model.addAttribute("errorMsg", ex.getMessage());
 		return "error";
+	}
+	
+	@GetMapping("/val")
+	@ResponseBody
+	public String getVal() {
+		return util.getVal();
 	}
 }

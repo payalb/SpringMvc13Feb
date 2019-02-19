@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.java"></context:component-scan>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="suffix" value=".jsp"></property>
+		<property name="prefix" value="/"></property>
+	</bean>
+
+	<bean
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		id="messageSource">
+		<property name="basename" value="login"></property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+		id="interceptor">
+		<property name="paramName" value="language">
+		</property>
+	</bean>
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*" />
+			<ref bean="interceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<bean
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" id="localeResolver">
+	</bean>
+</beans>
