@@ -28,6 +28,8 @@
     <module>SpringMvc13Feb.Demo6</module>
     <module>SpringMvc13Feb.Demo7</module>
     <module>SpringMvc13Feb.Demo8</module>
+    <module>SpringMvc13Feb.Demo9</module>
+    <module>SpringMvc13Feb.Demo10</module>
   </modules>
 	<build>
 		<plugins>

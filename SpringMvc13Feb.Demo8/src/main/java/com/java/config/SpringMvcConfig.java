@@ -27,6 +27,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login.do").setViewName("login");
+		registry.addViewController("/").setViewName("index");
 	}
 	
 	@Override

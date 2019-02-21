@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [22/Feb/2019:02:15:42 +0530] "GET /SpringMvc13Feb.Demo9/addDoctor.do HTTP/1.1" 200 568 http-bio-8080-exec-1 626
+0:0:0:0:0:0:0:1 - - [22/Feb/2019:02:15:49 +0530] "POST /SpringMvc13Feb.Demo9/doctors.do HTTP/1.1" 500 14287 http-bio-8080-exec-2 352
+0:0:0:0:0:0:0:1 - - [22/Feb/2019:02:17:03 +0530] "POST /SpringMvc13Feb.Demo9/doctors.do HTTP/1.1" 200 167 http-bio-8080-exec-3 463
+0:0:0:0:0:0:0:1 - - [22/Feb/2019:02:17:04 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
