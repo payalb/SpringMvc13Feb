@@ -2,11 +2,15 @@ package com.java.repository;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Types;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.java.dto.Account;
 import com.java.exception.InvalidStateException;
@@ -15,12 +19,13 @@ import com.java.exception.InvalidStateException;
 public class BankingRepositoryImpl implements BankingRepository {
 
 	@Autowired JdbcTemplate template;
+	@Transactional(propagation=Propagation.REQUIRED, isolation= Isolation.READ_COMMITTED, readOnly=false)
 	@Override
 	public void withdrawMoney(Account fromAccount, float amount) {
 		
-		Float sum=	template.queryForObject("select balance from account where accountNumber= "+ fromAccount.getAccountNumber(), Float.class);
+		Float sum=	template.queryForObject("select balance, version from account where accountNumber= "+ fromAccount.getAccountNumber(), Float.class);
 		if(sum>=amount) {	
-		template.update("update account set balance= ? where accountNumber =?",new PreparedStatementSetter() {
+		template.update("update account set balance= ?, version= version+1 where accountNumber =? and version=?",new PreparedStatementSetter() {
 				
 				@Override
 				public void setValues(PreparedStatement ps) throws SQLException {
@@ -34,6 +39,7 @@ public class BankingRepositoryImpl implements BankingRepository {
 
 	}
 
+	@Transactional(propagation=Propagation.REQUIRED)
 	@Override
 	public void depositMoney(Account toAccount, float amount) {
 		
@@ -47,5 +53,19 @@ public class BankingRepositoryImpl implements BankingRepository {
 		} );
 		
 	}
+	
+
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void addAccount(Account account) {
+		template.update("insert into account (balance, bank) values (?,?)",account.getBalance(), account.getBank());
+		
+	}
+/*	
+	@Transactional(isolation=Isolation.SERIALIZABLE, readOnly=true,rollbackFor=InvalidStateException.class)
+	public Account getAccount(int accountNumber, boolean status) {
+		template.queryForObject("select * from account where accoutnNumber=? and status= ?", requiredType)
+		//work
+		template.queryForObject("select * from account where accoutnNumber=? and status= ?", requiredType)
+	}*/
 
 }

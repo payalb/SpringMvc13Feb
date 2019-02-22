@@ -12,6 +12,11 @@ public class Account {
 	int accountNumber;
 	String bank;
 	float balance;
+	int version;
 	
+	public Account(String bank, float balance){
+		this.bank= bank;
+		this.balance= balance;
+	}
 	
 }
