@@ -30,7 +30,9 @@
     <module>SpringMvc13Feb.Demo8</module>
     <module>SpringMvc13Feb.Demo9</module>
     <module>SpringMvc13Feb.Demo10</module>
-  </modules>
+    <module>../SpringMvc13Feb.Demo11</module>
+    <module>SpringMvc13Feb.Demo10b</module>
+	</modules>
 	<build>
 		<plugins>
 			<plugin>
