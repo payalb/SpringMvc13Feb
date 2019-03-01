@@ -25,6 +25,12 @@ public class BankController {
 	@Autowired
 	BankingService service;
 
+	
+	/*@GetMapping("/login.htm")
+	public String loginPage() {
+		return "login";
+	}*/
+	
 	/*@CrossOrigin(origins= {"http://localhost:8080"}, methods= {RequestMethod.GET})*/
 	@PostMapping("/transferMoney.htm")
 	public String transferMoney(@Valid @ModelAttribute TransferForm form, BindingResult result, Model model) {

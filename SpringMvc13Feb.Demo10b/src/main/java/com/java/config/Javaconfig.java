@@ -13,6 +13,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @ComponentScan("com.java")
@@ -20,7 +22,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @PropertySource(value="classpath:database.properties")
 @EnableTransactionManagement(proxyTargetClass=false)
-public class Javaconfig {
+public class Javaconfig implements WebMvcConfigurer{
 
 	@Autowired Environment env;
 	@Bean
@@ -28,6 +30,10 @@ public class Javaconfig {
 		return new InternalResourceViewResolver("/", ".jsp");
 	}
 	
+	@Override
+	public  void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/login.htm").setViewName("login");
+	}
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource ds= new BasicDataSource();

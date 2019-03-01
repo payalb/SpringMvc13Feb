@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [01/Mar/2019:03:54:11 +0530] "GET /SpringMvc13Feb.Demo11/transferForm.jsp HTTP/1.1" 302 - http-bio-8080-exec-1 140
+0:0:0:0:0:0:0:1 - - [01/Mar/2019:03:54:11 +0530] "GET /SpringMvc13Feb.Demo11/login HTTP/1.1" 200 1421 http-bio-8080-exec-2 9
+0:0:0:0:0:0:0:1 - - [01/Mar/2019:03:54:18 +0530] "POST /SpringMvc13Feb.Demo11/login HTTP/1.1" 302 - http-bio-8080-exec-3 610
+0:0:0:0:0:0:0:1 - - [01/Mar/2019:03:54:19 +0530] "GET /SpringMvc13Feb.Demo11/transferForm.jsp HTTP/1.1" 200 560 http-bio-8080-exec-4 774
+0:0:0:0:0:0:0:1 - - [01/Mar/2019:03:54:32 +0530] "GET /SpringMvc13Feb.Demo11/addAccounts.htm HTTP/1.1" 403 979 http-bio-8080-exec-5 51

@@ -35,9 +35,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.authorizeRequests()
 				.regexMatchers("/transfer*.*").hasRole("CUSTOMER")
 				.regexMatchers("/addAccounts.htm").hasRole("ADMIN")
+				.anyRequest().permitAll()
 					.and()
-				.formLogin().and()
-				.httpBasic();
+				.formLogin().loginPage("/login.htm").usernameParameter("username")
+				.passwordParameter("pswd").defaultSuccessUrl("/index.jsp")
+				.failureUrl("/login.htm?error");
+		
+		
 		}
 	
 	

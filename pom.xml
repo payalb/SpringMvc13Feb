@@ -33,6 +33,7 @@
     <module>../SpringMvc13Feb.Demo11</module>
     <module>SpringMvc13Feb.Demo10b</module>
     <module>SpringMvc13Feb.Demo11</module>
+    <module>SpringMvc13Feb.Demo12</module>
   </modules>
 	<build>
 		<plugins>

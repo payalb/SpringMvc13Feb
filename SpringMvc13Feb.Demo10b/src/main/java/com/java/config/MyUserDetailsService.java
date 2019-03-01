@@ -36,6 +36,7 @@ public class MyUserDetailsService implements UserDetailsService{
 							obj.setEnabled(rs.getBoolean("enabled"));
 							obj.getAuthorities().add(rs.getString("authority"));
 						}
+						System.out.println(obj);
 						return obj;
 					}
 				});
