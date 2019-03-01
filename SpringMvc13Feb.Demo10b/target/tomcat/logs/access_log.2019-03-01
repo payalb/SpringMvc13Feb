@@ -1,3 +1,0 @@
-0:0:0:0:0:0:0:1 - - [01/Mar/2019:22:07:50 +0530] "GET /SpringMvc13Feb.Demo10b/transferForm.jsp HTTP/1.1" 302 - http-bio-8080-exec-1 217
-0:0:0:0:0:0:0:1 - - [01/Mar/2019:22:07:52 +0530] "GET /SpringMvc13Feb.Demo10b/login.htm HTTP/1.1" 200 426 http-bio-8080-exec-2 1449
-0:0:0:0:0:0:0:1 - - [01/Mar/2019:22:07:58 +0530] "POST /SpringMvc13Feb.Demo10b/login HTTP/1.1" 404 1007 http-bio-8080-exec-3 8

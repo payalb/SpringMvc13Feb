@@ -32,7 +32,8 @@ public class Javaconfig implements WebMvcConfigurer{
 	
 	@Override
 	public  void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/login.htm").setViewName("login");
+		registry.addViewController("/login").setViewName("login");
+		registry.addViewController("/index").setViewName("index");
 	}
 	@Bean
 	public BasicDataSource dataSource() {

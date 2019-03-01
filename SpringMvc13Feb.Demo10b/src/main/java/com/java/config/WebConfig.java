@@ -6,17 +6,17 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return null;
+		return new Class[] {SecurityConfig.class,Javaconfig.class};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] {Javaconfig.class};
+		return new Class[] {};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] {"*.htm", "*.html"};
+		return new String[] {"/"};
 	}
 
 }

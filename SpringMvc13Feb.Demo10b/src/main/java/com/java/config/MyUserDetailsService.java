@@ -23,6 +23,7 @@ public class MyUserDetailsService implements UserDetailsService{
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	System.out.println("****"+ username);
 		UserDetail details=template.query("select u.username as username, u.password as password, true as enabled, r.authority as authority from user_details u, user_roles r"
 				+ " where u.username=? and r.username = u.username ",new Object[] {username},new ResultSetExtractor<UserDetail>() {
 

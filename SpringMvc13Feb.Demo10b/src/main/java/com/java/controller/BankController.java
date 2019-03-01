@@ -6,6 +6,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.java.dto.Account;
@@ -26,10 +28,10 @@ public class BankController {
 	BankingService service;
 
 	
-	/*@GetMapping("/login.htm")
+	@RequestMapping(path="/login", method= {RequestMethod.GET,RequestMethod.POST})
 	public String loginPage() {
 		return "login";
-	}*/
+	}
 	
 	/*@CrossOrigin(origins= {"http://localhost:8080"}, methods= {RequestMethod.GET})*/
 	@PostMapping("/transferMoney.htm")
