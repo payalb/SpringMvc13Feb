@@ -12,7 +12,6 @@
 <body>
 
 <form action="./login"  method="post">
-${param.error}
 <sec:csrfInput/>
 <c:if test="${param.error}">
 <c:out value="Invalid username and Password!"></c:out>

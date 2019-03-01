@@ -8,6 +8,7 @@
 </head>
 <body>
 <form action="./transferMoney.htm" method="post">
+<a href="./logout">Logout</a>
 <h3 style="color:red">${errorMsg}</h3>
 From account number: <input type="text" name="fromAccount.accountNumber"/><br/>
 From bank: <input type="text" name="fromAccount.bank"/><br/>

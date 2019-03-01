@@ -30,7 +30,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	}
 	
 	public void configure(HttpSecurity http) throws Exception {
-		System.out.println("***In http");
 			http
 				.authorizeRequests()
 				.regexMatchers("/transfer*.*").hasRole("CUSTOMER")
@@ -39,9 +38,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 					.and()
 				.formLogin().loginPage("/login").usernameParameter("username")
 				.passwordParameter("pswd").defaultSuccessUrl("/index")
-				.failureForwardUrl("/login?error=true");
+				.failureForwardUrl("/login?error=true")
+				;
 		
-		
+			http.logout().logoutUrl("/logout");
 		}
 	
 	
